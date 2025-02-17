@@ -15,6 +15,12 @@ This repository attempts to build an Agentic Object Detection pipeline using Vis
 ![image](https://github.com/user-attachments/assets/8bb2f6f2-9798-4f9e-a301-19a66c49dc66)
 
 ## Demo Video
-[![Watch the video](https://img.youtube.com/vi/1NclBhTYiXY/maxresdefault.jpg)](https://youtu.be/1NclBhTYiXY)
+
+https://github.com/user-attachments/assets/0cdb7e2d-9e15-4e53-8967-8556f9e09b0a
+
+## Running the Demo
+1. Run `pip install -r requirements.txt`
+2. Run `python main.py` to spin up the Gradio Demo App.
+
 
 
