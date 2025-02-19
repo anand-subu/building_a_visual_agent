@@ -18,6 +18,11 @@ This repository attempts to build an Agentic Object Detection pipeline using Vis
 
 https://github.com/user-attachments/assets/0cdb7e2d-9e15-4e53-8967-8556f9e09b0a
 
+(Video was recorded using https://cursorful.com/ and edited using Flexclip for speeding up the video. The inference process is sped up by a higher factor for representation. The actual inference will take quite a bit of time. In  this repo, the demo video is alone only allowed for personal and non-commercial use.
+
+The image used in this video is a photo by <a href="https://unsplash.com/@frank_leuderalbert?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Frank Leuderalbert</a> on <a href="https://unsplash.com/photos/blue-ceramic-cup-with-saucer-on-table-RTVYnQsLgZ0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      )
+
 ## Contributors
 Built by [Anand Subramanian](https://www.linkedin.com/in/anand-subu/) and [Bharath Sripathy](https://www.linkedin.com/in/bharath-sripathy-866666156/)
 
