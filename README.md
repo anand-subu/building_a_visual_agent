@@ -1,4 +1,4 @@
-# building_a_visual_agent
+# Implementing Agentic Object Detection
 
 ## Introduction
 
