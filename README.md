@@ -23,6 +23,13 @@ https://github.com/user-attachments/assets/0cdb7e2d-9e15-4e53-8967-8556f9e09b0a
 The image used in this video is a photo by <a href="https://unsplash.com/@frank_leuderalbert?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Frank Leuderalbert</a> on <a href="https://unsplash.com/photos/blue-ceramic-cup-with-saucer-on-table-RTVYnQsLgZ0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
       )
 
+## Prior Work
+This work is meant as our interpretation and exploration of how Agentic Object Detection could work - leveraging VLMs and Open Vocab Object Detection models. There has been prior work that has explored these concepts from similar angles. Please let me know if I have missed out any relevant work.
+
+1. [LandingAI's implementation of Agentic Object Detection](https://github.com/landing-ai/vision-agent/blob/main/vision_agent/tools/tools.py) and their [associated blog post](https://landing.ai/agentic-object-detection)
+2. [DetGPT: Detect What You Need via Reasoning](https://arxiv.org/pdf/2305.14167) - This concept also leverages VLMs to assist in detecting objects with nuanced concepts.
+3. [How to Fine-tune PaliGemma for Object Detection Tasks](https://blog.roboflow.com/how-to-fine-tune-paligemma/) - VLMs can theoretically be fine-tuned for object detection tasks - and this can include fine-tuning to detect objects for more nuanced user queries.
+
 ## Contributors
 Built by [Anand Subramanian](https://www.linkedin.com/in/anand-subu/) and [Bharath Sripathy](https://www.linkedin.com/in/bharath-sripathy-866666156/)
 
