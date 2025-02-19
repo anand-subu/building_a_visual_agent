@@ -14,6 +14,18 @@ This repository attempts to build an Agentic Object Detection pipeline using Vis
 
 ![image](https://github.com/user-attachments/assets/8bb2f6f2-9798-4f9e-a301-19a66c49dc66)
 
+
+### Our Approach:
+1. Given a user-uploaded image and request, we first process them with a vision-language model (**GPT-4o**) to infer target object concepts. If the request explicitly specifies objects, we extract those. Otherwise, the VLM identifies all visible objects in the image.
+
+2. The inferred object concepts are passed to an open-vocabulary object detection model (**Grounding Dino**) to extract bounding boxes.
+
+3. The detected objects are visualized by padding the image with a white border, assigning arrows, and labeling each object with a unique number. This annotated image, along with the extracted concepts and user request, is then processed by a **VLM reasoner (OpenAI's o1)** to validate detections using **Chain-of-Thought**. If inaccuracies are found, the model refines object categories to higher-level abstractions **(ex: cricketers → people, poodle → dog, bats → bat)** before re-running detection.
+
+4. The refined concepts and original image are reprocessed through the object detection model to generate updated bounding boxes.
+
+5. The final detections are again annotated with arrows and unique numbers. This revised image, along with the user's request, is reviewed by a **VLM reasoner (GPT-4o)** using **Chain-of-Thought** to filter out irrelevant detections, retaining only those aligned with the user's request.
+
 ## Demo Video
 
 https://github.com/user-attachments/assets/0cdb7e2d-9e15-4e53-8967-8556f9e09b0a
@@ -29,6 +41,10 @@ This work is meant as our interpretation and exploration of how Agentic Object D
 1. [LandingAI's implementation of Agentic Object Detection](https://github.com/landing-ai/vision-agent/blob/main/vision_agent/tools/tools.py) and their [associated blog post](https://landing.ai/agentic-object-detection)
 2. [DetGPT: Detect What You Need via Reasoning](https://arxiv.org/pdf/2305.14167) - This concept also leverages VLMs to assist in detecting objects with nuanced concepts.
 3. [How to Fine-tune PaliGemma for Object Detection Tasks](https://blog.roboflow.com/how-to-fine-tune-paligemma/) - VLMs can theoretically be fine-tuned for object detection tasks - and this can include fine-tuning to detect objects for more nuanced user queries.
+
+## Limitations
+1. High-latency - We make a lot of VLM calls to OpenAI models (o1 and gpt-4o) that makes it slow for inference.
+2. Occasional Non-Determinism in results - The initial VLM call to GPT-4o can detect different concepts each time - leading to different outputs from the object detection models for the same image across different runs.
 
 ## Contributors
 Built by [Anand Subramanian](https://www.linkedin.com/in/anand-subu/) and [Bharath Sripathy](https://www.linkedin.com/in/bharath-sripathy-866666156/)
